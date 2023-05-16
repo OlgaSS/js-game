@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500;600&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  color: #49465f;
+  font-family: 'Raleway', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+  text-align: center;
+}
+
+.button {
+  display: block;
+  font-family: inherit;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  padding: 15px 20px;
+  font-size: 1.2rem;
+  border-radius: 30px;
+  background-color: #49465f;
+  transition: all .2s ease 0s;
+}
+
+.button:hover {
+  background-color: #615997;
+}
+
+.start {
+  text-decoration: none;
+  font-size: 1.6rem;
+  padding: 15px 40px;
+}
+
+.title {
+  line-height: 1;
+  font-size: 3rem;
+  font-weight: 600;
+  margin: 0 0 70px;
+}
+
+.wrapper {
+  position: fixed;
+}
+
+@keyframes move1 {
+  0% {
+    transform: translate(0px, 0px);
+  }
+
+  50% {
+    transform: translate(-3px, -3px);
+  }
+
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
+
+@keyframes move2 {
+  0% {
+    transform: translate(0px, 0px);
+  }
+
+  50% {
+    transform: translate(2px, 2px);
+  }
+
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
+
+.bg-circle {
+  position: absolute;
+  border-radius: 50%;
+  transition: all .9s ease 0s;
+  transform: translate(0);
+}
+
+.bg-circle:nth-child(2n+1) {
+  animation: move1 1s infinite linear;
+}
+
+.bg-circle:nth-child(2n) {
+  animation: move2 1s infinite linear;
+}
+
+.app {
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.20);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+}
+
+.screen {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 15px;
+  height: 100vh;
+  width: 100vw;
+}
+
+.screen.active {
+  display: flex;
+}
+
+.time-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
+  gap: 20px;
+  padding: 0;
+}
+
+.hide {
+  opacity: 0;
+}
+
+.board {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 500px;
+  height: 500px;
+  background: #fff;
+  border-radius: 50px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  overflow: hidden;
+}
+
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.time-block {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.finish-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.finish-block p {
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.finish-block .button {
+  margin-top: 40px;
+}
+
+
+@media (max-width: 600px) {
+  .title {
+    font-size: 2.5rem;
+    margin-bottom: 45px;
+  }
+
+  .time-list {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 550px) {
+  .board {
+    width: 100%;
+  }
+}
